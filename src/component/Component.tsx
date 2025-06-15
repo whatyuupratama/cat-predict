@@ -47,10 +47,16 @@ export default function Component() {
       formData.append('image', file);
 
       try {
-        const response = await fetch('http://127.0.0.1:5000/predict', {
-          method: 'POST',
-          body: formData,
-        });
+        const response = await fetch(
+          'https://8c51-2001-448a-50a0-5efe-900d-3312-3cc7-7a3.ngrok-free.app/predict',
+          {
+            method: 'POST',
+            headers: {
+              'User-Agent': 'my-custom-client',
+            },
+            body: formData,
+          }
+        );
         if (!response.ok) throw new Error('Gagal prediksi');
         const data = await response.json();
         if (data.prediction === 'Maaf, gambar tidak dikenali') {
