@@ -42,13 +42,12 @@ export default function Component() {
 
       setPrediction(null);
 
-      // Kirim ke backend
       const formData = new FormData();
       formData.append('image', file);
 
       try {
         const response = await fetch(
-          'https://33d7-182-253-58-137.ngrok-free.app//predict',
+          'https://d58f-2001-448a-50a0-5efe-6934-ff96-c110-1e6c.ngrok-free.app/predict',
           {
             method: 'POST',
             headers: {
@@ -82,7 +81,6 @@ export default function Component() {
 
   return (
     <div className='min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 relative overflow-hidden'>
-      {/* Decorative Elements */}
       <div className='absolute top-10 left-10 text-6xl opacity-20 rotate-12'>
         🐾
       </div>
