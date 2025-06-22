@@ -47,7 +47,7 @@ export default function Component() {
 
       try {
         const response = await fetch(
-          'https://24c6-180-248-22-74.ngrok-free.app/predict',
+          'https://46a5-180-248-22-74.ngrok-free.app/predict',
           {
             method: 'POST',
             headers: {
