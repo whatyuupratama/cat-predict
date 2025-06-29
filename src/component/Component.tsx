@@ -138,15 +138,13 @@ export default function Component() {
         setUploadedImage(e.target?.result as string);
       };
       reader.readAsDataURL(file);
-
       setPrediction(null);
-
       const formData = new FormData();
       formData.append('image', file);
 
       try {
         const response = await fetch(
-          'https://ce35-103-109-160-118.ngrok-free.app/predict',
+          'https://d65b-180-248-20-152.ngrok-free.app/predict',
           {
             method: 'POST',
             headers: {
