@@ -144,7 +144,7 @@ export default function Component() {
 
       try {
         const response = await fetch(
-          'https://d65b-180-248-20-152.ngrok-free.app/predict',
+          'https://dbff-125-166-1-128.ngrok-free.app/predict',
           {
             method: 'POST',
             headers: {
@@ -193,12 +193,9 @@ export default function Component() {
       <div className='absolute top-1/2 left-5 text-2xl opacity-15'>🧡</div>
       <div className='absolute top-1/3 right-5 text-2xl opacity-15'>💛</div>
 
-      {/* Main Content */}
       <div className='relative z-10 container mx-auto px-4 py-8 lg:py-16 min-h-screen flex flex-col justify-center'>
         <div className='flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16'>
-          {/* Left Content */}
           <div className='flex-1 text-center lg:text-left max-w-2xl'>
-            {/* Animated Title */}
             <div className='mb-6'>
               <motion.h1
                 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight'
@@ -238,7 +235,6 @@ export default function Component() {
               </motion.h1>
             </div>
 
-            {/* Animated Subtitle */}
             <motion.p
               className='text-lg sm:text-xl md:text-lg mb-8 text-orange-800 leading-relaxed'
               initial={{ opacity: 0 }}
@@ -251,7 +247,6 @@ export default function Component() {
               {subtitleText}
             </motion.p>
 
-            {/* Features */}
             <motion.div
               className='grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8'
               initial={{ opacity: 0, y: 20 }}
@@ -262,7 +257,6 @@ export default function Component() {
               }}
             ></motion.div>
 
-            {/* Cat Facts */}
             <motion.div
               className='bg-gradient-to-r from-orange-100 to-amber-100 rounded-2xl p-6 border border-orange-200'
               initial={{ opacity: 0, scale: 0.95 }}
@@ -283,8 +277,6 @@ export default function Component() {
               </p>
             </motion.div>
           </div>
-
-          {/* Right Upload Section */}
           <motion.div
             className='flex-shrink-0 w-full max-w-md'
             initial={{ opacity: 0, x: 50 }}
@@ -399,7 +391,6 @@ export default function Component() {
               </AnimatePresence>
             </motion.div>
 
-            {/* Popular Breeds */}
             <motion.div
               className='mt-8 text-center'
               initial={{ opacity: 0, y: 20 }}
@@ -446,7 +437,6 @@ export default function Component() {
           </motion.div>
         </div>
 
-        {/* Bottom Quote */}
         <motion.div
           className='text-center mt-16 lg:mt-20'
           initial={{ opacity: 0 }}
