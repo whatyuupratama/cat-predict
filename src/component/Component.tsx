@@ -1,102 +1,3 @@
-// import { useEffect, useRef, useState } from 'react';
-// import Quagga from 'quagga';
-
-// type Attendance = {
-//   masuk: number;
-// };
-
-// export default function BarcodeScanner() {
-//   const videoRef = useRef<HTMLDivElement>(null);
-//   const [attendances, setAttendances] = useState<Record<string, Attendance>>(
-//     {}
-//   );
-//   const [message, setMessage] = useState<string | null>(null);
-
-//   useEffect(() => {
-//     if (videoRef.current) {
-//       (Quagga as any).init(
-//         {
-//           inputStream: {
-//             name: 'Live',
-//             type: 'LiveStream',
-//             target: videoRef.current,
-//             constraints: {
-//               width: 640,
-//               height: 480,
-//               facingMode: 'environment',
-//             },
-//           },
-//           decoder: {
-//             readers: ['code_128_reader', 'ean_reader', 'ean_8_reader'],
-//           },
-//         },
-//         (err: any) => {
-//           if (err) {
-//             console.error('Quagga init error:', err);
-//             return;
-//           }
-//           (Quagga as any).start();
-//         }
-//       );
-
-//       (Quagga as any).onDetected((data: any) => {
-//         const code = data.codeResult.code;
-//         const now = Date.now();
-
-//         setAttendances((prev) => {
-//           const prevAttendance = prev[code];
-//           if (prevAttendance) {
-//             const masukDate = new Date(prevAttendance.masuk);
-//             const nowDate = new Date(now);
-//             const isSameDay =
-//               masukDate.getFullYear() === nowDate.getFullYear() &&
-//               masukDate.getMonth() === nowDate.getMonth() &&
-//               masukDate.getDate() === nowDate.getDate();
-
-//             if (isSameDay) {
-//               setMessage('Hari ini anda sudah melakukan absen.');
-//               return prev;
-//             }
-//           }
-//           setMessage('Absen berhasil!');
-//           return {
-//             ...prev,
-//             [code]: { masuk: now },
-//           };
-//         });
-//       });
-//     }
-
-//     return () => {
-//       (Quagga as any).stop();
-//     };
-//   }, []);
-
-//   return (
-//     <div className='p-4'>
-//       <h1 className='text-xl font-bold mb-4'>Scan Barcode KTM</h1>
-//       <div
-//         ref={videoRef}
-//         className='w-full h-[480px] border rounded-md overflow-hidden'
-//       />
-//       {message && (
-//         <div className='mt-4 text-blue-600 font-semibold'>{message}</div>
-//       )}
-//       <div className='mt-4'>
-//         <h2 className='font-semibold mb-2'>Data Kehadiran Hari Ini:</h2>
-//         <ul>
-//           {Object.entries(attendances).map(([nim, data]) => (
-//             <li key={nim} className='mb-2'>
-//               <span className='font-mono'>{nim}</span> — Masuk:{' '}
-//               {data.masuk ? new Date(data.masuk).toLocaleTimeString() : '-'}
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// }
-
 'use client';
 
 import type React from 'react';
@@ -144,7 +45,7 @@ export default function Component() {
 
       try {
         const response = await fetch(
-          'https://dbff-125-166-1-128.ngrok-free.app/predict',
+          'https://d4c2e6cb3957.ngrok-free.app/predict',
           {
             method: 'POST',
             headers: {
